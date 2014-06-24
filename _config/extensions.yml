@@ -1,0 +1,18 @@
+---
+Name: livepubshopextensions
+---
+Order:
+  extensions:
+    - LivePubOrder
+
+Member:
+  extensions:
+    - LivePubMember
+
+Controller:
+  extensions:
+    - LivePubShopController
+
+Product:
+  extensions:
+    - LivePubProduct

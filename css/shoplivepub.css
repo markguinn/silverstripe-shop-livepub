@@ -1,0 +1,8 @@
+.show-for-members { display: none !important }
+.logged-in .show-for-members { display: block !important }
+.logged-in .hide-for-members { display: none !important }
+
+.product-in-cart .show-for-product-in-cart { display: block !important }
+.product-in-cart .hide-for-product-in-cart { display: none !important }
+.product-not-in-cart .show-for-product-in-cart { display: none !important }
+.product-not-in-cart .hide-for-product-in-cart { display: block !important }

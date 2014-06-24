@@ -1,0 +1,26 @@
+{
+	"name": "markguinn/silverstripe-shop-livepub",
+	"description": "Integration points for ss-shop and livepub modules (static caching with dynamic areas)",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "ecommerce", "shop", "caching", "static publishing", "livepub"],
+	"license": "MIT",
+	"authors": [{
+		"name": "Mark Guinn",
+		"email": "mark@adaircreative.com",
+		"homepage": "http://github.com/markguinn"
+	}],
+	"extra": {
+		"installer-name": "shop_livepub",
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	},
+	"require": {
+		"silverstripe/framework": "~3.1",
+		"burnbright/silverstripe-shop": "~1.0",
+		"markguinn/silverstripe-livepub": "~1.0"
+	},
+	"suggest": {
+		"silverstripe/staticpublishqueue": "dev-master"
+	}
+}
