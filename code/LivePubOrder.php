@@ -33,7 +33,7 @@ class LivePubOrder extends DataExtension
 	}
 
 	public function onPlaceOrder() {
-		unset($_SESSION['Cart']);
+		if (session_id()) unset($_SESSION['Cart']);
 	}
 
 	/**
@@ -46,7 +46,7 @@ class LivePubOrder extends DataExtension
 	 * @param int       $quantity
 	 */
 	protected function updateSessionCart($item, $buyable, $quantity) {
-		if (!session_id()) return;
+		if (!session_id() || !$buyable) return;
 		$cart = !empty($_SESSION['Cart']) ? $_SESSION['Cart'] : array('Items' => array(), 'SubTotal' => 0.0);
 
 		if ($quantity > 0) {
@@ -92,7 +92,7 @@ class LivePubOrder extends DataExtension
 	public function rebuildSessionCart() {
 		if (!session_id()) return; // disable for CLI
 		unset($_SESSION['Cart']);
-		if ($this->owner->IsCart() && $items = $this->owner->Items()) {
+		if ($items = $this->owner->Items()) {
 			foreach($items as $item){
 				$this->updateSessionCart($item, $item->Buyable(), $item->Quantity);
 			}
