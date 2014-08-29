@@ -36,6 +36,10 @@ class LivePubOrder extends DataExtension
 		if (session_id()) unset($_SESSION['Cart']);
 	}
 
+	public function onQuoteSubmitted() {
+		if (session_id()) unset($_SESSION['Cart']);
+	}
+
 	/**
 	 * If this order is still a cart, we save a copy of the items and
 	 * the subtotal in the session for the quick cart dropdown to be
