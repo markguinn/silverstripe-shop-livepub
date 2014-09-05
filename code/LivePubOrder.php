@@ -33,7 +33,10 @@ class LivePubOrder extends DataExtension
 	}
 
 	public function onPlaceOrder() {
-		if (session_id()) unset($_SESSION['Cart']);
+		if (session_id()) {
+			unset($_SESSION['Cart']);
+			Session::clear('Cart');
+		}
 	}
 
 	/**
