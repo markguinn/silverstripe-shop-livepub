@@ -17,15 +17,18 @@ class LivePubOrder extends DataExtension
 	 * @param $filter
 	 */
 	public function afterAdd($item, $buyable, $quantity, $filter) {
-		$this->updateSessionCart($item, $buyable, $quantity);
+//		$this->updateSessionCart($item, $buyable, $quantity);
+		$this->rebuildSessionCart();
 	}
 
 	public function afterRemove($item, $buyable, $quantity, $filter) {
-		$this->updateSessionCart($item, $buyable, $quantity);
+//		$this->updateSessionCart($item, $buyable, $quantity);
+		$this->rebuildSessionCart();
 	}
 
 	public function afterSetQuantity($item, $buyable, $quantity, $filter) {
-		$this->updateSessionCart($item, $buyable, $quantity);
+//		$this->updateSessionCart($item, $buyable, $quantity);
+		$this->rebuildSessionCart();
 	}
 
 	public function onAfterWrite() {
